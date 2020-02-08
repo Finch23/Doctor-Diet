@@ -1,7 +1,7 @@
 .cont-a {
     height: 500px;
     width: 410px;
-    background-color: lightgray;
+    background-color: rgb(241, 241, 241);
     margin-top: 15px;
 }
 
@@ -25,4 +25,8 @@
 
 #search {
     margin-left: 10px;
+}
+
+.docImg {
+    height: 100%;
 }
