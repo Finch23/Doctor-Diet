@@ -1,0 +1,28 @@
+.cont-a {
+    height: 700px;
+    width: 410px;
+    background-color: lightgray;
+    margin-top: 15px;
+}
+
+.drop {
+    margin: 10px;
+}
+
+#btn {
+    height: 38px;
+    width: 60px;
+    margin-right: 10px;
+}
+
+.cont-b {
+    height: 500px;
+    width: 800px;
+    border: 1px dashed black;
+    margin-top: 15px;
+
+}
+
+#search {
+    margin-left: 10px;
+}
