@@ -4,7 +4,7 @@ var nutriAPIKey = "a9fb6c8edc2b740ab7b9f3d3f9a3eea2";
 var nutriAppId = "49764774";
 var dietEntry = "low-sodium";
 
-var queryBetterDoctor = "https://api.betterdoctor.com/2016-03-01/doctors?location=35.732,-78.850,10&limit=10&user_key=" + betterDocAPIKey;
+// var queryBetterDoctor = "https://api.betterdoctor.com/2016-03-01/doctors?location=35.732,-78.850,10&limit=10&user_key=" + betterDocAPIKey;
 
 var queryNutrition = "https://api.nutritionix.com/v1_1/search/" + dietEntry + "?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=" + nutriAppId + "&appKey=" + nutriAPIKey;
 //doctorList();
@@ -41,7 +41,7 @@ function cityDetails() {
     });
 }
 //Display doctor's list
-function doctorList() {
+function doctorList(queryBetterDoctor) {
     $("#docList").empty();
     return $.ajax({
         url: queryBetterDoctor,
@@ -114,15 +114,17 @@ $.fn.stars = function() {
     });
 }
 
+//Ajax call to populate specific diet food-item
 function dietList() {
     $("#dietList").empty();
+    var queryNutrition = "https://api.nutritionix.com/v1_1/search/" + dietEntry + "?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=" + nutriAppId + "&appKey=" + nutriAPIKey;
     return $.ajax({
         url: queryNutrition,
         method: "GET"
         }).then(function(res) {
             for(var i=0; i < 10; i++) {
                 //creating card and setting its content
-                var cardDiv = $("<div>").attr("class","card mb-5 shadow-lg rounded").css("width", "18rem");
+                var cardDiv = $("<div>").attr("class","card mb-5 shadow-lg rounded").css("max-width", "18rem");
                 //Creating image and star col
                 var imgIcon = $("<img>").attr("class", "card-img-top m-2").css("width","90%");
                 //Checking the gender of the doctor and displaying the profile icon accordingly
