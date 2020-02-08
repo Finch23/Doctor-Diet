@@ -16,12 +16,23 @@
     
     <body>
         <header>
-            <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-                <a class="navbar-brand h2" href="#">
-                <img src="assets/images/dashIcon.jpg" width="40" height="40" class="d-inline-block align-top mx-3" alt="">My health Dashboard</a>
-            </nav>
+            <nav class="navbar is-info" role="navigation" aria-label="main navigation">
+                <a class="navbar-brand" style='color: black;'>
+                      <img src='assets/images/dashIcon.jpg' width='40' height='40' class='d-inline-block align-top mx-3'>
+                    My Doctor & Diet                  
+                </a>
+              
+                <div id="navbarBasicExample" class="navbar-menu">
+                  <div class="navbar-start">
+                    <a class="navbar-item d-inline-block align-top mx-3">
+                        <i class="fas fa-utensils mr-2"></i>Explore Diet
+                   </a>
+                  </div>
+                </div>
+              </nav>
         </header>
         <div class="container">
+<<<<<<< HEAD
             <div id="docList" class="mt-5"></div>
             <div class="mt-5">
                 <div class="row" id="dietList"></div>
@@ -37,9 +48,63 @@
                     <button type="button" id="btnFood" class="btn btn-primary m-3 p-3 rounded-pill btn-lg" onclick="searchCity()">
                         <i class="fa fa-shopping-cart"></i> Explore Healthy food
                     </button>
+=======
+            <div class='row' id='docDiv'>
+                <div class='col-sm'>
+                    <div class='cont-a h5'>
+                        Choose an Option: 
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                            </div>
+                            <select class="custom-select drop" id="searchDoctor">
+                              <option value="1">Primary Care</option>
+                              <option value="2">Specialist</option>
+                            </select>
+                        </div>
+                        <div class='h5'>Enter Your City:</div>
+                        <div class="input-group">
+                            <input class="form-control" id="search" type="search" placeholder="Enter" aria-label="Search" id='city'>
+                            <button type="button" id="btn" class="btn btn-primary" onclick='searchDoctor()'>
+                            Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-lg'>
+                    <div class='cont-b text-center p-5'>
+                        <img class='docImg' src='assets/images/docFood.jpg'>
+                    </div>
+>>>>>>> master
                 </div>
             </div>
+            <article class="message is-info">
+                <div class="message-header">
+                  <p>Your Doctor & You</p>
+                </div>
+                <div class="message-body">
+                  Your relationship with your Doctor is one of upmost importance. You should feel comfortable discussing anything that you are curious or have questions about. Here at My Doctor My Food, we will help you select a Doctor near you and help get you on the right diet according to your inputs.
+                  If you do not find a diet option pertaining to you, then you can visit <a href='https://www.nutrition.gov/diet-and-health-conditions' target='_blank'>Nutrition.gov</a> for more information.
+                </div>
+              </article>
         </div>
+        <div class="modal" id='errorModal' tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Error</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>City not recognized</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary">Ok</button>
+                </div>
+              </div>
+            </div>
+          </div>
         <!-- script to include jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Moment.js script -->
