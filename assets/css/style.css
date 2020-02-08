@@ -2,7 +2,6 @@
     display: none;
 }
 .card {
-    border: 2px solid rgb(25, 25, 133);
-    border-radius: 3%;
+    border: 6px solid rgb(25, 25, 133);
     margin: 0 auto;
 }
