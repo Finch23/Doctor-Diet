@@ -1,7 +1,7 @@
 .cont-a {
-    height: 700px;
+    height: 500px;
     width: 410px;
-    background-color: lightgray;
+    background-color: rgb(241, 241, 241);
     margin-top: 15px;
 }
 
@@ -11,7 +11,7 @@
 
 #btn {
     height: 38px;
-    width: 60px;
+    width: 70px;
     margin-right: 10px;
 }
 
@@ -25,4 +25,8 @@
 
 #search {
     margin-left: 10px;
+}
+
+.docImg {
+    height: 100%;
 }
