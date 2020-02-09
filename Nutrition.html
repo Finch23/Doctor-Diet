@@ -25,7 +25,7 @@
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item" onclick=diet()>
+                    <a class="navbar-item" onclick="window.location.href=''">
                         <i class="fa fa-shopping-cart"></i>Explore Diet
                    </a>
                   </div>
@@ -33,57 +33,21 @@
               </nav>
         </header>
         <div class="container">
-            <div class='row' id='doctors' >
+            <div class='row' id='diet' >
                 <div class='col-sm'>
                     <div class='cont-a h5'>
-                        Choose a Doctor: 
+                        Health Condition 
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                             </div>
-                            <select class="custom-select drop" id="inputGroupSelect01">
-                              <option selected>Choose...</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
-                            </select>
-                        </div>
-                        <div class='h5'>Search for a City:</div>
-                        <div class="input-group">
-                            <input class="form-control" id="search" type="search" placeholder="Search" aria-label="Search">
-                            <button type="button" id="btn" class="btn btn-primary">
-                            <i class="fa fa-search"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class='col-lg'>
-                    <div class='cont-b'>
-
-                    </div>
-                </div>
-            </div>
-            <div class='row hide' id='diet' >
-                <div class='col-sm'>
-                    <div class='cont-a h5'>
-                        Health Condition: 
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                            </div>
-                            <select class="custom-select drop" id="inputGroupSelect01" onmousedown="this.value='';" onchange="jsFunction(this.value);"></select>
-                              <option selected>Choose...</option>
+                            <select class="custom-select drop" id="inputGroupSelect01" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                              <option selected value="0">Choose...</option>
                               <option value="1">Diabetes</option>
-                              <option value="2">Food Allergies</option>
-                              <option value="3">Lactose Intolerance</option>
+                              <option value="2">Heart Disease</option>
+                              <option value="3">Food Alergy</option>
                             </select>
                         </div>
                         <div id="btnHome"></div>
-                        <div class='h5'>Food Restrictions</div>
-                        <div class="input-group">
-                            <input class="form-control" id="search" type="search" placeholder="Search" aria-label="Search">
-                            <button type="button" id="btn" class="btn btn-primary">
-                            <i class="fa fa-search"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <div class='col-lg'>
@@ -92,6 +56,7 @@
                     </div>
                 </div>
             </div>
+            
         </div>
         <!-- script to include jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
