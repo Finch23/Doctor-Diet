@@ -1,11 +1,11 @@
-<<<<<<< HEAD
 .first {
     display: none;
 }
 .card {
     border: 6px solid rgb(25, 25, 133);
     margin: 0 auto;
-=======
+}
+
 .cont-a {
     height: 500px;
     width: 410px;
@@ -37,5 +37,4 @@
 
 .docImg {
     height: 100%;
->>>>>>> master
 }
