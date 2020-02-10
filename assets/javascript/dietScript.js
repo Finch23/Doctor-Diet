@@ -82,7 +82,6 @@ function jsFunction(m){
 
 //style the buttons according to css for buttons
 //Add a home page function that will take you back to the Doctors Page
-//Fill out the rest of the links coresponding buttons 
 //Add functionality to the buttons (communicate with Rashmi about this)
 
 
