@@ -6,7 +6,8 @@ var queryNutrition = "https://api.nutritionix.com/v1_1/search/" + dietEntry + "?
 
 //Ajax call to populate specific diet food-item
 function dietList() {
-    $("#dietList").empty();
+    $("#docImage").hide();
+    $(".carousel-item").empty();
     var queryNutrition = "https://api.nutritionix.com/v1_1/search/" + dietEntry + "?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=" + nutriAppId + "&appKey=" + nutriAPIKey;
     return $.ajax({
         url: queryNutrition,
@@ -34,7 +35,12 @@ function dietList() {
                 cardBodyDiv.append(cardTitle, text1, text2);
                 cardDiv.append(imgIcon, cardBodyDiv);
                 //Adding the Card in the docList div
-                $("#dietList").append(cardDiv);   
+                if(i < 3) {
+                    $(".dietList1").append(cardDiv);
+                }else if(i < 6) {
+                    $(".dietList2").append(cardDiv);
+                }else if(i < 9)
+                    $(".dietList3").append(cardDiv);   
             }
     });
 }

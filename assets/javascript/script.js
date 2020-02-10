@@ -21,7 +21,7 @@ function searchDoctor() {
 function cityDetails() {
     var queryCityURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=metric&appid=" + cityAPIKey;
     var queryBetterDoctorPart1 = "https://api.betterdoctor.com/2016-03-01/doctors?" + docSpeciality + "&location=" 
-    var queryBetterDoctorPart2 = ",10&limit=30&user_key=" + betterDocAPIKey;
+    var queryBetterDoctorPart2 = ",10&limit=10&user_key=" + betterDocAPIKey;
     $.ajax({
         url: queryCityURL,
         method: "GET"
@@ -37,14 +37,18 @@ function cityDetails() {
 }
 //Display doctor's list
 function doctorList(queryBetterDoctor) {
-    $("#docList").empty();
+    $("#docImage").hide();
+    $(".carousel-item").empty();
+    // $("#docList1").empty();
+    // $("#docList2").empty();
+    // $("#docList3").empty();
     return $.ajax({
         url: queryBetterDoctor,
         method: "GET"
         }).then(function(res) {
-            for(var i=0; i < 10; i++) {
+            for(var i=0; i < 9; i++) {
                //creating card and setting its content
-                var cardDiv = $("<div>").attr("class","card mb-2 shadow-lg bg-white rounded").css("max-width", "540px");
+                var cardDiv = $("<div>").attr("class","card mb-2 shadow-lg bg-white rounded").css("max-width", "35rem");
                 var cardRow = $("<div>").attr("class","row no-gutters");
                 //Creating image and star col
                 var cardImgCol = $("<div>").attr("class","col-4");
@@ -61,7 +65,7 @@ function doctorList(queryBetterDoctor) {
                 var starDiv = $("<div>").attr("class","text-center");
                 if (res.data[i].ratings.length !== 0) {
                     var starSpan = $("<span>").attr("class", "stars").attr("data-rating", res.data[i].ratings[0].rating);
-                    $('.stars').stars();    
+                    $(".stars").stars();    
                 }
                 //appending star span in star div
                 starDiv.append(starSpan);
@@ -76,7 +80,7 @@ function doctorList(queryBetterDoctor) {
                 var text3 = $("<p>").attr("class", "card-text").html("<b>Address:</b> " + res.data[i].practices[0].visit_address.street + "," + res.data[i].practices[0].visit_address.city);
                 var text4Icon = $("<i>").attr("class", "fa fa-phone-square");
                 var text4Text = " " + res.data[i].practices[0].phones[0].number;
-                var text4 = $("<p>").attr("class", "card-text h5");
+                var text4 = $("<p>").attr("class", "card-text h6");
                 text4.append(text4Icon, text4Text);
                 //Appending CardTitle and its texts into cardBody
                 cardBodyDiv.append(cardTitle, text1, text2, text3, text4);
@@ -89,7 +93,12 @@ function doctorList(queryBetterDoctor) {
                 //finally the cardRow into my Card div
                 cardDiv.append(cardRow);
                 //Adding the Card in the docList div
-                $("#docList").append(cardDiv);
+                if(i < 3) {
+                    $(".docList1").append(cardDiv);
+                }else if(i < 6) {
+                    $(".docList2").append(cardDiv);
+                }else if(i < 9)
+                    $(".docList3").append(cardDiv);
             }
     });
 }
