@@ -1,40 +1,14 @@
-.first {
-    display: none;
-}
 .card {
     border: 6px solid rgb(25, 25, 133);
     margin: 0 auto;
 }
-
 .cont-a {
-    height: 500px;
-    width: 410px;
     background-color: rgb(241, 241, 241);
-    margin-top: 15px;
 }
-
-.drop {
-    margin: 10px;
+.btnSlide {
+    background-color: rgb(190, 183, 251);
 }
-
-#btn {
-    height: 38px;
-    width: 70px;
-    margin-right: 10px;
-}
-
 .cont-b {
-    height: 500px;
-    width: 800px;
     border: 1px dashed black;
-    margin-top: 15px;
-
 }
 
-#search {
-    margin-left: 10px;
-}
-
-.docImg {
-    height: 100%;
-}
