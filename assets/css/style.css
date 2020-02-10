@@ -7,6 +7,7 @@
 }
 .btnSlide {
     background-color: rgb(190, 183, 251);
+    max-width: fit-content;
 }
 .cont-b {
     border: 1px dashed black;
