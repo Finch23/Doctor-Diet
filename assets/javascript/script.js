@@ -45,6 +45,10 @@ function diet(){
     location.replace('file:///C:/Users/Gabe/Desktop/Class_Stuff/Project%20%231/Project1/Nutrition.html')
 };
 
+function goDoctors(){
+    location.replace('file:///C:/Users/Gabe/Desktop/Class_Stuff/Project%20%231/Project1/landing.html')
+};
+
 function jsFunction(m){
     console.log(m);
     $("#btnHome").innerHTML="";
@@ -84,3 +88,7 @@ function jsFunction(m){
 
 
 //Work on wireframe box layout on Monday
+
+function goDoctors(){
+
+}
