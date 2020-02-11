@@ -1,9 +1,35 @@
+//API key and App id of Nutrinix
 var nutriAPIKey = "a9fb6c8edc2b740ab7b9f3d3f9a3eea2";
 var nutriAppId = "49764774";
 var dietEntry = "low-sodium";
+//Rendering Specific diet buttons depending on user's input condition
+function renderDietBtns() {
+    var userCondition = $("#userCondition").val();
+    if(userCondition == 1) {
+       //create buttons for "low-fat, low-calorie, low-carb"  
+       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-fat").css('display','block').text("Low Fat"); 
+       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-calorie").css('display','block').text("Low Calorie"); 
+       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-carb").css('display','block').text("Low Carb");                           
+    } else if(userCondition == 2) {
+        //create buttons for "cholesterol-free, low-sodium, high-fiber"
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "cholesterol-free").css('display','block').text("Cholesterol Free"); 
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-sodium").css('display','block').text("Low Sodium"); 
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "high-fiber").css('display','block').text("High Fiber"); 
+    } else if(userCondition == 3) {
+        //create buttons for "no-milk-ingredients, no-tree-nut-ingredients, no-egg-ingredients, no-peanut-ingredients"
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-milk-ingredients").css('display','block').text("Dairy Free"); 
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-tree-nut-ingredients").css('display','block').text("Tree nut Free"); 
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-egg-ingredients").css('display','block').text("Egg Free"); 
+        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-peanut-ingredients").css('display','block').text("Peanut Free");
+    }
+    $("#btnHome").append(li);
+}
 
-var queryNutrition = "https://api.nutritionix.com/v1_1/search/" + dietEntry + "?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=" + nutriAppId + "&appKey=" + nutriAPIKey;
-dietList();
+//function when a city is clicked on search history
+function openClickedDiet(id){
+    dietEntry = id;
+    dietList();
+}
 //Ajax call to populate specific diet food-item
 function dietList() {
     $("#docImage").hide();

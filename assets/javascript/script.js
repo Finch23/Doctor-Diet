@@ -13,7 +13,7 @@ function searchDoctor() {
         //call Ajax call function for city details, five day forecast and add city in the list
         cityDetails();
     } else {
-        $('#errorModal').modal('show');
+        $("#errorModal").modal('show');
     }
 }
 
@@ -39,9 +39,6 @@ function cityDetails() {
 function doctorList(queryBetterDoctor) {
     $("#docImage").hide();
     $(".carousel-item").empty();
-    // $("#docList1").empty();
-    // $("#docList2").empty();
-    // $("#docList3").empty();
     return $.ajax({
         url: queryBetterDoctor,
         method: "GET"

@@ -12,4 +12,10 @@
 .cont-b {
     border: 1px dashed black;
 }
+#myErrorModal {
+    z-index: 1500 !important;
+}
+/* .modal-backdrop {
+    display: none;
+} */
 
