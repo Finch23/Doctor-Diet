@@ -9,9 +9,7 @@
     background-color: rgb(190, 183, 251);
     max-width: fit-content;
 }
-.cont-b {
-    border: 1px dashed black;
-}
+
 #myErrorModal {
     z-index: 1500 !important;
 }
@@ -26,3 +24,37 @@
     display: none;
 }
 
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+    float: left;
+    
+}
+
+#btnHome{
+    padding-top: 3%;
+    float: left;
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    
+    border-top:  5px solid black;
+}
+
+.btn{
+    display: block;
+    background-color: #a52a2a;
+    color: white;
+}
+
+.queryBtn{
+    display: block;
+    background-color: cornflowerblue;
+    color: white;
+    margin-top: 10%;
+    width: 70%;
+    margin-left: 10%;   
+}

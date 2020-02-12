@@ -24,7 +24,7 @@
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item d-inline-block align-top mx-3">
+                    <a class="navbar-item d-inline-block align-top mx-3" href="nutrition.html">
                         <i class="fas fa-utensils mr-2"></i>Explore Diet
                    </a>
                   </div>
@@ -34,12 +34,13 @@
         <div class="container">
             <div class='row'>
                 <div class='col-sm-3 col-md-3 col-lg-3 mt-3 cont-a'>
-                    <div class='h5'>
-                        Choose an Option: 
-                        <div class="input-group mb-3">
+                    <div class='h5 pt-4'>
+                        I want to see a: 
+                        <div class="input-group mb-3 pt-2">
                             <div class="input-group-prepend">
                             </div>
                             <select class="custom-select drop" id="searchDoctor">
+                              <option value='0' selected>Choose a type of Doctor</option>
                               <option value="1">Primary Care</option>
                               <option value="2">Specialist</option>
                             </select>
@@ -106,7 +107,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  Please, enter valid US city!
+                  Please enter/select all the valid details(US city only)!
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>

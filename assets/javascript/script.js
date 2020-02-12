@@ -7,6 +7,10 @@ var docSpeciality = "";
 //function gets triggered when search button is clicked
 function searchDoctor() {
     docArea = $("#searchDoctor").val();
+    if(docArea == 0) {
+        $("#errorModal").modal('show');
+        return;
+    }
     if(docArea == 1) docSpeciality = "specialty_uid=internist%2Cfamily-practitioner";
     if(docArea == 2) 
     docSpeciality = "specialty_uid=pediatrician%2Callergist%2Cobstetrics-gynecologist%2Cfoot-ankle-orthopedist%2C";

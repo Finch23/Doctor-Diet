@@ -13,7 +13,7 @@ This project uses HTML5 and following specifications:
 - Project Management tool: Kanban.
 - JS library: Jquery
 ## Usage:
-- 'My Doctor and Diet' application comes handy for users to find doctors in their area, plus depending on user body condition it can suggest the diet plan he/she should follow. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code.The user will be prompted to select mainly: 
+- 'My Doctor and Diet' application comes handy for users to find doctors in their area, plus depending on user health condition it can suggest the diet plans he/she should follow. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript(Jquery) code.The user will be prompted to select mainly: 
 	# Find Doctor:
     - **Type of Doctor**: User can select the type of doctor like 'primary care' or 'specialist'.
     - **City**: The city where user is searching for the doctor.
@@ -22,8 +22,11 @@ This project uses HTML5 and following specifications:
     
 ## Deployed link:
 	https://finch23.github.io/Project1/
-
+### Find Doctor's page:
 ![ScreenShot](assets/images/readmeScreen1.png "Doctor's page")
+
+### Explore Diet's page:
+![ScreenShot](assets/images/readmeScreen2.png "Suggeted diet page")
 
 ## Credits:
 UNC Chapelhill
