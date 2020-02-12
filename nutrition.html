@@ -13,7 +13,7 @@
       <!-- Including project's Stylesheet -->
       <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    
+     
     <body>
         <header>
             <nav class="navbar is-info" role="navigation" aria-label="main navigation">
@@ -24,8 +24,8 @@
               
                 <div id="navbarBasicExample" class="navbar-menu">
                   <div class="navbar-start">
-                    <a class="navbar-item d-inline-block align-top mx-3">
-                        <i class="fas fa-utensils mr-2"></i>Explore Diet
+                    <a class="navbar-item d-inline-block align-top mx-3" href="index.html">
+                        <i class="fas fa-search mr-2"></i>Find Doctors
                    </a>
                   </div>
                 </div>
@@ -38,13 +38,17 @@
                     Choose a health condition: 
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                        </div>
-                        <select class="custom-select drop" id="userCondition" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                          
+                        <select class="custom-select drop" id="userCondition" onmousedown="this.value='';" >
                           <option selected value="0">Choose...</option>
                           <option value="1">Diabetes</option>
                           <option value="2">Heart Disease</option>
                           <option value="3">Food Alergy</option>
                         </select>
+                        <button type="button" id="btn" class="btn btn-primary" onclick='renderDietBtns()'>
+                          <i class="fa fa-search"></i>
+                      </button>
+                      </div>
                     </div>
                     <div id="btnHome"></div>
                 </div>
@@ -80,7 +84,7 @@
                     <p>Your Diet & You</p>
                   </div>
                   <div class="message-body">
-                    Your relationship with your Doctor is one of upmost importance. You should feel comfortable discussing anything that you are curious or have questions about. Here at My Doctor My Food, we will help you select a Doctor near you and help get you on the right diet according to your inputs.
+                    Proper nutrition is essential to a healthy life style, especially for those with certain health conditions. Despite its importance, creating the correct diet for you can be a painstaking process. My Doctor My Diet seeks to streamline the nutrition process. Simply select your dietary restriction or need and we will get you on the path to finding the diet thats right for you.
                     If you do not find a diet option pertaining to you, then you can visit <a href='https://www.nutrition.gov/diet-and-health-conditions' target='_blank'>Nutrition.gov</a> for more information.
                   </div>
               </article>
