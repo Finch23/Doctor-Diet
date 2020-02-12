@@ -14,15 +14,15 @@ function renderDietBtns() {
        var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-calorie").css('display','block').text("Low Calorie"); 
        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-carb").css('display','block').text("Low Carb");                           
     } else if(userCondition == 2) {
-        //create buttons for "cholesterol-free, low-sodium, high-fiber"
+        //create buttons for "Low-cholesterol, low-sodium, high-fiber"
         var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-cholesterol").css('display','block').text("Cholesterol Free"); 
         var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-sodium").css('display','block').text("Low Sodium"); 
         var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "high-fiber").css('display','block').text("High Fiber"); 
     } else if(userCondition == 3) {
-        //create buttons for "no-milk-ingredients, no-tree-nut-ingredients, no-egg-ingredients, no-peanut-ingredients"
-        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "no-milk-ingredients").css('display','block').text("Dairy Free"); 
-        var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "no-egg-ingredients").css('display','block').text("Egg Free"); 
-        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "no-peanut-ingredients").css('display','block').text("Peanut Free");
+        //create buttons for "vegan, ketogenic-diet, mediterranean-diet"
+        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "vegan").css('display','block').text("Vegan"); 
+        var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "ketogenic-diet").css('display','block').text("Ketogenic"); 
+        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "mediterranean-diet").css('display','block').text("Mediterranean");
     }
     $("#btnHome").append(btn1, btn2, btn3);
 }
