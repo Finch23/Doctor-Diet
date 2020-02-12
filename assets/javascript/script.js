@@ -49,7 +49,7 @@ function doctorList(queryBetterDoctor) {
                 var cardRow = $("<div>").attr("class","row no-gutters");
                 //Creating image and star col
                 var cardImgCol = $("<div>").attr("class","col-4");
-                var imgIcon = $("<img>").attr("class", "card-img m-2");
+                var imgIcon = $("<img>").attr("class", "card-img");
                 //Checking the gender of the doctor and displaying the profile icon accordingly
                 if(res.data[i].profile.gender === 'female') {
                     imgIcon.attr("src", "assets/images/femaleDocImg.jpg");
@@ -59,13 +59,16 @@ function doctorList(queryBetterDoctor) {
 
                 }
                 //Creating star div and span and calling star function to convert numeric rating into stars
-                var starDiv = $("<div>").attr("class","text-center");
+                var starDiv = $("<div>").attr("class","text-center test");
                 if (res.data[i].ratings.length !== 0) {
-                    var starSpan = $("<span>").attr("class", "stars").attr("data-rating", res.data[i].ratings[0].rating);
-                    $(".stars").stars();    
+                    //Getting Star array into a variable star
+                    var star = getStars(res.data[i].ratings[0].rating);
+                    var starSpan = $("<span>").attr("class", "stars");
+                    starSpan.append(star[0],star[1],star[2],star[3],star[4]);
+                    starDiv.append(imgIcon, starSpan);
+                }else {
+                    starDiv.append(imgIcon);
                 }
-                //appending star span in star div
-                starDiv.append(starSpan);
                 //Creating Information col of the card
                 var cardInfoCol = $("<div>").attr("class","col-8");
                 var cardBodyDiv =$("<div>").attr("class","card-body text-center");
@@ -84,7 +87,7 @@ function doctorList(queryBetterDoctor) {
                 //Appending cardBody into cardInfoCol
                 cardInfoCol.append(cardBodyDiv);
                 //Appending image into cardImgCol
-                cardImgCol.append(imgIcon, starDiv);
+                cardImgCol.append(starDiv);
                 ////Appending cardImgCol and cardInfoCol into my cardRow
                 cardRow.append(cardImgCol, cardInfoCol);
                 //finally the cardRow into my Card div
@@ -100,18 +103,28 @@ function doctorList(queryBetterDoctor) {
     });
 }
 
-//function to convert numeric rating into star rating
-$.fn.stars = function() {
-    return $(this).each(function() {
-        //getting actual rating and total number of stars
-        const rating = $(this).data("rating");
-        const numStars = 5;
-        //rendering the star
-        const fullStar = '<i class="fas fa-star"></i>'.repeat(Math.floor(rating));
-        //checking if it is fully divisible by 1 and accordingly setting it to half or not
-        const halfStar = (rating%1!== 0) ? '<i class="fas fa-star-half-alt"></i>': '';
-        //if it is fully divisible by '1' then fill the whole star
-        const noStar = '<i class="far fa-star"></i>'.repeat(Math.floor(numStars-rating));
-        $(this).html(`${fullStar}${halfStar}${noStar}`);
-    });
+function getStars(rating) {
+    // Round to nearest half
+    rating = Math.round(rating * 2) / 2;
+    let output = [];
+    // Append all the filled whole stars
+    for (var i = rating; i >= 1; i--){
+        var myStar1 = $("<i>").attr("class", "fa fa-star").css("color","gold");
+        output.push(myStar1);
+        // output.push('<i class="fa fa-star" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    }
+      
+    // If there is a half a star, append it
+    if (i == .5){
+        var myStar2 = $("<i>").attr("class", "fa fa-star-half-o").css("color","gold");
+        output.push(myStar2);
+    }
+    //  output.push('<i class="fa fa-star-half-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    // Fill the empty stars
+    for (let i = (5 - rating); i >= 1; i--) {
+        var myStar3 = $("<i>").attr("class", "fa fa-star-half-o").css("color","gold");
+        output.push(myStar3);
+    }
+    //   output.push('<i class="fa fa-star-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
+    return output;
 }
