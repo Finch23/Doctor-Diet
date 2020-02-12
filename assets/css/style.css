@@ -20,6 +20,9 @@
 .modal {
     z-index: 9999;
 }
+#dietList {
+    display: none;
+}
 
 .hide{
     display: none;

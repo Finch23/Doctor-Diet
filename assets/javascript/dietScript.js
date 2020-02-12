@@ -1,8 +1,9 @@
 //API key and App id of Nutrinix
 var nutriAPIKey = "a9fb6c8edc2b740ab7b9f3d3f9a3eea2";
 var nutriAppId = "49764774";
-var dietEntry = "low-sodium";
+var dietEntry = "";
 //Rendering Specific diet buttons depending on user's input condition
+
 function renderDietBtns() {
     $("#btnHome").html("");
     console.log("it works");
@@ -14,7 +15,7 @@ function renderDietBtns() {
        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-carb").css('display','block').text("Low Carb");                           
     } else if(userCondition == 2) {
         //create buttons for "cholesterol-free, low-sodium, high-fiber"
-        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "cholesterol-free").css('display','block').text("Cholesterol Free"); 
+        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-cholesterol").css('display','block').text("Cholesterol Free"); 
         var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "low-sodium").css('display','block').text("Low Sodium"); 
         var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center queryBtn").attr('onClick', 'openClickedDiet(id)').attr('id', "high-fiber").css('display','block').text("High Fiber"); 
     } else if(userCondition == 3) {
@@ -46,7 +47,7 @@ function dietList() {
                 //creating card and setting its content
                 var cardDiv = $("<div>").attr("class","card mb-2 shadow-lg rounded").css("max-width", "15rem");
                 //Creating image and star col
-                var imgIcon = $("<img>").attr("class", "card-img-top").css("width","90%");
+                var imgIcon = $("<img>").attr("class", "card-img-top pl-4").css("width","90%");
                 //Checking the gender of the doctor and displaying the profile icon accordingly
                 if((i%2) === 0) {
                     var srcImg1 = "assets/images/" + dietEntry +".jpg";
