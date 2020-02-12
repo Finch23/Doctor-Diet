@@ -1,4 +1,6 @@
+//API key for betterdoctor 
 var betterDocAPIKey = "c570e2001f75afa94675595ad2391528";
+//API key for location
 var cityAPIKey = "2a29d28596f5b969578c8d643d9842b5";
 var docSpeciality = "";
 
@@ -60,14 +62,15 @@ function doctorList(queryBetterDoctor) {
                 }
                 //Creating star div and span and calling star function to convert numeric rating into stars
                 var starDiv = $("<div>").attr("class","text-center test");
+                var starSpan = $("<span>").attr("class", "stars");
                 if (res.data[i].ratings.length !== 0) {
                     //Getting Star array into a variable star
                     var star = getStars(res.data[i].ratings[0].rating);
-                    var starSpan = $("<span>").attr("class", "stars");
                     starSpan.append(star[0],star[1],star[2],star[3],star[4]);
                     starDiv.append(imgIcon, starSpan);
                 }else {
-                    starDiv.append(imgIcon);
+                    starSpan.append("No reviews found")
+                    starDiv.append(imgIcon, starSpan);
                 }
                 //Creating Information col of the card
                 var cardInfoCol = $("<div>").attr("class","col-8");
@@ -111,20 +114,16 @@ function getStars(rating) {
     for (var i = rating; i >= 1; i--){
         var myStar1 = $("<i>").attr("class", "fa fa-star").css("color","gold");
         output.push(myStar1);
-        // output.push('<i class="fa fa-star" aria-hidden="true" style="color: gold;"></i>&nbsp;');
     }
-      
     // If there is a half a star, append it
     if (i == .5){
         var myStar2 = $("<i>").attr("class", "fa fa-star-half-o").css("color","gold");
         output.push(myStar2);
     }
-    //  output.push('<i class="fa fa-star-half-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
     // Fill the empty stars
     for (let i = (5 - rating); i >= 1; i--) {
         var myStar3 = $("<i>").attr("class", "fa fa-star-half-o").css("color","gold");
         output.push(myStar3);
     }
-    //   output.push('<i class="fa fa-star-o" aria-hidden="true" style="color: gold;"></i>&nbsp;');
     return output;
 }

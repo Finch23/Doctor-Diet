@@ -39,12 +39,15 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                         </div>
-                        <select class="custom-select drop" id="userCondition" onmousedown="this.value='';" onchange="jsFunction(this.value);">
+                        <select class="custom-select drop" id="userCondition" onmousedown="this.value='';">
                           <option selected value="0">Choose...</option>
                           <option value="1">Diabetes</option>
                           <option value="2">Heart Disease</option>
                           <option value="3">Food Alergy</option>
                         </select>
+                        <button type="button" id="btn" class="btn btn-primary" onclick='renderDietBtns()()'>
+                          <i class="fa fa-search"></i>
+                        </button>
                     </div>
                     <div id="btnHome"></div>
                 </div>
@@ -53,7 +56,7 @@
                 <div class="cont-b p-5 mx-auto" id="docImage">
                     <img class='docImg img-fluid' src='assets/images/docFood.jpg'>            
                 </div>
-                <div id="carouselExampleControls" class="carousel border p-5" data-ride="" id="dietList">
+                <div id="carouselExampleControls" class="carousel border px-5" data-ride="">
                     <div class="carousel-inner">
                         <div class="carousel-item active"> 
                           <div class="row dietList1"></div>

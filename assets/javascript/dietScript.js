@@ -1,27 +1,29 @@
 //API key and App id of Nutrinix
 var nutriAPIKey = "a9fb6c8edc2b740ab7b9f3d3f9a3eea2";
 var nutriAppId = "49764774";
-var dietEntry = "low-sodium";
+var dietEntry = "";
 //Rendering Specific diet buttons depending on user's input condition
+
 function renderDietBtns() {
+    $("#btnHome").empty();
     var userCondition = $("#userCondition").val();
     if(userCondition == 1) {
        //create buttons for "low-fat, low-calorie, low-carb"  
-       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-fat").css('display','block').text("Low Fat"); 
-       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-calorie").css('display','block').text("Low Calorie"); 
-       var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-carb").css('display','block').text("Low Carb");                           
+       var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-fat").css('display','block').text("Low Fat"); 
+       var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-calorie").css('display','block').text("Low Calorie"); 
+       var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-carb").css('display','block').text("Low Carb");                           
     } else if(userCondition == 2) {
         //create buttons for "cholesterol-free, low-sodium, high-fiber"
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-cholesterol").css('display','block').text("Low Cholesterol"); 
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-sodium").css('display','block').text("Low Sodium"); 
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "high-fiber").css('display','block').text("High Fiber"); 
+        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-cholesterol").css('display','block').text("Low Cholesterol"); 
+        var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "low-sodium").css('display','block').text("Low Sodium"); 
+        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "high-fiber").css('display','block').text("High Fiber"); 
     } else if(userCondition == 3) {
         //create buttons for "no-milk-ingredients, no-tree-nut-ingredients, no-egg-ingredients, no-peanut-ingredients"
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-milk-ingredients").css('display','block').text("Dairy Free"); 
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-egg-ingredients").css('display','block').text("Egg Free"); 
-        var btn = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-peanut-ingredients").css('display','block').text("Peanut Free");
+        var btn1 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-milk-ingredients").css('display','block').text("Dairy Free"); 
+        var btn2 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-egg-ingredients").css('display','block').text("Egg Free"); 
+        var btn3 = $("<button>").attr("class", "border btn btn-lg mb-2 text-center").attr('onClick', 'openClickedDiet(id)').attr('id', "no-peanut-ingredients").css('display','block').text("Peanut Free");
     }
-    $("#btnHome").append(li);
+    $("#btnHome").append(btn1, btn2, btn3);
 }
 
 //function when a city is clicked on search history
@@ -44,7 +46,7 @@ function dietList() {
                 //creating card and setting its content
                 var cardDiv = $("<div>").attr("class","card mb-2 shadow-lg rounded").css("max-width", "15rem");
                 //Creating image and star col
-                var imgIcon = $("<img>").attr("class", "card-img-top").css("width","90%");
+                var imgIcon = $("<img>").attr("class", "card-img-top pl-4").css("width","90%");
                 //Checking the gender of the doctor and displaying the profile icon accordingly
                 if((i%2) === 0) {
                     var srcImg1 = "assets/images/" + dietEntry +".jpg";
