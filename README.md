@@ -14,10 +14,10 @@ This project uses HTML5 and following specifications:
 - JS library: Jquery
 ## Usage:
 - 'My Doctor and Diet' application comes handy for users to find doctors in their area, plus depending on user health condition it can suggest the diet plans he/she should follow. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript(Jquery) code.The user will be prompted to select mainly: 
-	# Find Doctor:
+	### Find Doctor:
     - **Type of Doctor**: User can select the type of doctor like 'primary care' or 'specialist'.
     - **City**: The city where user is searching for the doctor.
-    # Explore Diet:
+    ### Explore Diet:
     - **Condition of the user**: User can select the body codition he/she is suffering from then the app provides the suggestions for diet accordingly.
     
 ## Deployed link:
