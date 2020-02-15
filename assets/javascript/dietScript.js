@@ -48,7 +48,7 @@ function dietList() {
                 var cardDiv = $("<div>").attr("class","card mb-2 shadow-lg rounded").css("max-width", "15rem");
                 //Creating image and star col
                 var imgIcon = $("<img>").attr("class", "card-img-top pl-4").css("width","90%");
-                //Checking the gender of the doctor and displaying the profile icon accordingly
+                //Swapping Images for item cards
                 if((i%2) === 0) {
                     var srcImg1 = "assets/images/" + dietEntry +".jpg";
                     imgIcon.attr("src", srcImg1);
