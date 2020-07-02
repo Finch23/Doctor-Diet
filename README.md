@@ -21,7 +21,7 @@ This project uses HTML5 and following specifications:
     - **Condition of the user**: User can select the body codition he/she is suffering from then the app provides the suggestions for diet accordingly.
     
 ## Deployed link:
-	https://finch23.github.io/Project1/
+	https://finch23.github.io/Doctor-Diet/
 ### Find Doctor's page:
 ![ScreenShot](assets/images/readmeScreen1.png "Doctor's page")
 
